@@ -1,77 +1,115 @@
 <?xml version="1.0"?>
-
 <config>
     <modules>
         <Ism_News>
-            <version>1.0.0</version>
+            <version>0.1.0</version>
         </Ism_News>
     </modules>
-
-
-
-
-<!----     
+    <frontend>
+        <routers>
+            <news>
+                <use>standard</use>
+                <args>
+                    <module>Ism_News</module>
+                    <frontName>news</frontName>
+                </args>
+            </news>
+        </routers>
+    </frontend>
+    <admin>
+        <routers>
+            <news>
+                <use>admin</use>
+                <args>
+                    <module>Ism_News</module>
+                    <frontName>news</frontName>
+                </args>
+            </news>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <news module="news">
+                <title>News</title>
+                <sort_order>77</sort_order>
+                <children>
+                    <article module="news">
+                        <title>Manage News</title>
+                        <sort_order>0</sort_order>
+                        <action>news/adminhtml_article</action>
+                    </article>
+                </children>
+            </news>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <blog>
+                            <title>News Module</title>
+                            <sort_order>200</sort_order>
+                        </blog>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <news>
+                    <file>news.xml</file>
+                </news>
+            </updates>
+        </layout>
+    </adminhtml>
 
 
     <global>
         <models>
-            <admin>
-                <Modelclass>Mage_Admin_Model</class>
-                <resourceModel>admin_resource</resourceModel>
-            </admin>
-            <admin_resource>
-                <class>Mage_Admin_Model_Resource</class>
-                <deprecatedNode>admin_mysql4</deprecatedNode>
+            <news>
+                <class>Ism_News_Model</class>
+                <resourceModel>news_mysql4</resourceModel>
+            </news>
+            <news_mysql4>
+                <class>Ism_News_Model_Mysql4</class>
                 <entities>
-                    <user>
-                        <table>admin_user</table>
-                    </user>
-                    <role>
-                        <table>admin_role</table>
-                    </role>
-                    <rule>
-                        <table>admin_rule</table>
-                    </rule>
-                    <assert>
-                        <table>admin_assert</table>
-                    </assert>
+                    <article>
+                        <table>news_articles</table>
+                    </article>
                 </entities>
-            </admin_resource>
+            </news_mysql4>
         </models>
-        <helpers>
-            <admin>
-                <class>Mage_Admin_Helper</class>
-            </admin>
-        </helpers>
         <resources>
-            <admin_setup>
+            <news_setup>
                 <setup>
-                    <module>Mage_Admin</module>
+                    <module>Ism_News</module>
                 </setup>
-            </admin_setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </news_setup>
+            <news_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </news_write>
+            <news_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </news_read>
         </resources>
         <blocks>
-            <admin>
-                <class>Mage_Admin_Block</class>
-            </admin>
+            <news>
+                <class>Ism_News_Block</class>
+            </news>
         </blocks>
+        <helpers>
+            <news>
+                <class>Ism_News_Helper</class>
+            </news>
+        </helpers>
     </global>
-    <default>
-        <admin>
-            <emails>
-                <forgot_email_template>admin_emails_forgot_email_template</forgot_email_template>
-                <forgot_email_identity>general</forgot_email_identity>
-                <password_reset_link_expiration_period>1</password_reset_link_expiration_period>
-            </emails>
-        </admin>
-    </default>
-    <adminhtml>
-        <layout>
-            <updates>
-                <admin>
-                    <file>admin.xml</file>
-                </admin>
-            </updates>
-        </layout>
-    </adminhtml>
 </config>

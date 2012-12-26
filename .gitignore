@@ -1,6 +1,5 @@
 /includes
-/media
-/var
 /robots.txt
 /errors/local.xml
-
+/var/cache
+/var/session
