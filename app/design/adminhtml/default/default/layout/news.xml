@@ -5,4 +5,12 @@
             <block type="news/adminhtml_article" name="article" />
         </reference>
     </news_adminhtml_article_index>
+
+    <news_adminhtml_article_edit>
+        <reference name="content">
+            <block type="news/adminhtml_edit" name="article" />
+        </reference>
+    </news_adminhtml_article_edit>
+
+
 </layout>

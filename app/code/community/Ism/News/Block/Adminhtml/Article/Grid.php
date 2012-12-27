@@ -12,7 +12,7 @@ class Ism_News_Block_Adminhtml_Article_Grid extends Mage_Adminhtml_Block_Widget_
 	public function __construct()
 	{
 		parent::__construct();
-		$this->setId('blogArticleGrid');
+		$this->setId('newsArticleGrid');
 		$this->setDefaultSort('article_id');
 		$this->setDefaultDir('ASC');
 		$this->setSaveParametersInSession(true);
@@ -20,7 +20,7 @@ class Ism_News_Block_Adminhtml_Article_Grid extends Mage_Adminhtml_Block_Widget_
 
 	protected function _prepareCollection()
 	{
-		$collection = Mage::getModel('blog/article')->getCollection();
+		$collection = Mage::getModel('news/article')->getCollection();
 		$this->setCollection($collection);
 		return parent::_prepareCollection();
 	}
@@ -28,14 +28,14 @@ class Ism_News_Block_Adminhtml_Article_Grid extends Mage_Adminhtml_Block_Widget_
 	protected function _prepareColumns()
 	{
 		$this->addColumn('article_id', array(
-			'header'    => Mage::helper('blog/article')->__('ID'),
+			'header'    => Mage::helper('news/article')->__('ID'),
 			'align'     => 'right',
 			'width'     => '50px',
 			'index'     => 'article_id',
 		));
 
 		$this->addColumn('title', array(
-			'header'    => Mage::helper('blog/article')->__('Title'),
+			'header'    => Mage::helper('news/article')->__('Title'),
 			'align'     => 'left',
 			'index'     => 'title',
 		));

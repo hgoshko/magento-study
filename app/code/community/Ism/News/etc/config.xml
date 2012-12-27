@@ -48,10 +48,10 @@
                 </all>
                 <admin>
                     <children>
-                        <blog>
+                        <news>
                             <title>News Module</title>
                             <sort_order>200</sort_order>
-                        </blog>
+                        </news>
                     </children>
                 </admin>
             </resources>

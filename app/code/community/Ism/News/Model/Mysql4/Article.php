@@ -10,7 +10,7 @@
 class Ism_News_Model_Mysql4_Article extends Mage_Core_Model_Mysql4_Abstract {
 
 	public function _construct() {
-		$this->_init('news/article', 'news_id');
+		$this->_init('news/article', 'article_id');
 	}
 
 }

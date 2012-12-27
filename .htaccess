@@ -208,3 +208,18 @@
 ## http://developer.yahoo.com/performance/rules.html#etags
 
     #FileETag none
+
+SetEnvIf Host www\.ismstore\.magento\.local MAGE_RUN_CODE=ismstore
+SetEnvIf Host www\.ismstore\.magento\.local MAGE_RUN_TYPE=website
+SetEnvIf Host ^ismstore\.magento\.local MAGE_RUN_CODE=ismstore
+SetEnvIf Host ^ismstore\.magento\.local MAGE_RUN_TYPE=website
+
+SetEnvIf Host www\.ecompany\.magento\.local MAGE_RUN_CODE=ecompany
+SetEnvIf Host www\.ecompany\.magento\.local MAGE_RUN_TYPE=website
+SetEnvIf Host ^ecompany\.magento\.local MAGE_RUN_CODE=ecompany
+SetEnvIf Host ^ecompany\.magento\.local MAGE_RUN_TYPE=website
+
+SetEnvIf Host www\.commerce\.magento\.local MAGE_RUN_CODE=commerce
+SetEnvIf Host www\.commerce\.magento\.local MAGE_RUN_TYPE=website
+SetEnvIf Host ^commerce\.magento\.local MAGE_RUN_CODE=commerce
+SetEnvIf Host ^commerce\.magento\.local MAGE_RUN_TYPE=website
