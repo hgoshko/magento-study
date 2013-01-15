@@ -15,6 +15,15 @@
                 </args>
             </news>
         </routers>
+
+        <layout>
+            <updates>
+                <news>
+                    <file>news.xml</file>
+                </news>
+            </updates>
+        </layout>
+
     </frontend>
     <admin>
         <routers>
@@ -49,6 +58,18 @@
                 <admin>
                     <children>
                         <news>
+
+                                <children>
+                                    <save translate="title">
+                                        <title>Save Page</title>
+                                        <sort_order>0</sort_order>
+                                    </save>
+                                    <delete translate="title">
+                                        <title>Delete Page</title>
+                                        <sort_order>10</sort_order>
+                                    </delete>
+                                </children>
+
                             <title>News Module</title>
                             <sort_order>200</sort_order>
                         </news>
@@ -63,6 +84,7 @@
                 </news>
             </updates>
         </layout>
+
     </adminhtml>
 
 
@@ -70,16 +92,16 @@
         <models>
             <news>
                 <class>Ism_News_Model</class>
-                <resourceModel>news_mysql4</resourceModel>
+                <resourceModel>news_resource</resourceModel>
             </news>
-            <news_mysql4>
-                <class>Ism_News_Model_Mysql4</class>
+            <news_resource>
+                <class>Ism_News_Model_Resource</class>
                 <entities>
                     <article>
                         <table>news_articles</table>
                     </article>
                 </entities>
-            </news_mysql4>
+            </news_resource>
         </models>
         <resources>
             <news_setup>
