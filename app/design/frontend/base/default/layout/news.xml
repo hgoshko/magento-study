@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <news_index_index>
+        <reference name="content">
+            <block type="news/list" name="news.list" template="ism_news/list.phtml"/>
+        </reference>
+    </news_index_index>
+
+    <news_index_view>
+        <reference name="content">
+            <block type="news/article" name="article" template="ism_news/article.phtml"/>
+        </reference>
+    </news_index_view>
+
+</layout>

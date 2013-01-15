@@ -1,0 +1,7 @@
+<?php /** @var $this Ism_News_Block_List */ ?>
+
+<?php foreach ($this->getCollection() as $article) : ?>
+    <a href="<?=$this->getUrl('news/index/view', array('id'=> $article->getId()));?>">
+        <?=$article->getTitle(); ?>
+    </a>
+<?php endforeach; ?>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<widgets>
+    <news_list type="news/widget_page_link" translate="name description" module="news">
+        <name>ISM News List</name>
+        <description>Latest news list</description>
+        <parameters>
+            <amount translate="label">
+                <visible>1</visible>
+                <label>Maximum news amount</label>
+                <type>text</type>
+            </amount>
+        </parameters>
+    </news_list>
+</widgets>
