@@ -7,7 +7,9 @@
 class Ism_News_Block_List extends Mage_Core_Block_Template {
 
     public function getCollection() {
-        return Mage::getModel('news/article')->getCollection()->addFieldToFilter('published', 0);
+        return Mage::getModel('news/article')->getCollection()
+			->addFieldToFilter('published', 1)
+			->setOrder('created_date', 'DESC');
     }
 
 }

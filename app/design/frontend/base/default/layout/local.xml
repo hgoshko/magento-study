@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.1.0">
 	<default translate="label">
-		<reference name="head">
+		<!--reference name="head">
 				<action method="addJs"><script>ism/test.js</script></action>
-		</reference>
+		</reference-->
 		
 
         <reference name="top.links">

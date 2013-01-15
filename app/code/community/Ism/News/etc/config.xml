@@ -87,7 +87,6 @@
 
     </adminhtml>
 
-
     <global>
         <models>
             <news>

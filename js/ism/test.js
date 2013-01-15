@@ -1,1 +1,1 @@
-/*alert("Welcome into ISM Study Webshop!!!");*/
+alert("Welcome into ISM Study Webshop!!!");

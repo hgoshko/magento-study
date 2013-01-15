@@ -1,0 +1,16 @@
+<?php /** @var $list Ism_News_Model_Resource_Article_Collection */ ?>
+
+<div class='block'>
+	<div class='block-title'>
+		<strong>Latest News</strong>
+	</div>
+	<div class='block-content'>
+
+		<?php foreach ($list as $article) : ?>
+		<a href="<?=$this->getUrl('news/index/view', array('id'=> $article->getId()));?>">
+			<?=$article->getTitle(); ?>
+		</a><hr/>
+		<?php endforeach; ?>
+
+	</div>
+</div>
