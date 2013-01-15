@@ -1,6 +1,5 @@
 /includes
 /robots.txt
 /errors/local.xml
-/var/cache
-/var/session
+/var
 /media/catalog/product/cache
