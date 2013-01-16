@@ -13,7 +13,7 @@ class Ism_News_Model_Article extends Mage_Core_Model_Abstract {
 	{
 		parent::_construct();
 		$this->_init('news/article');
+		$this->_eventPrefix = 'news_article';
 	}
-
 
 }

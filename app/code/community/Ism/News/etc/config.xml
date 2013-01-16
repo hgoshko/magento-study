@@ -52,24 +52,19 @@
         </menu>
         <acl>
             <resources>
-                <all>
-                    <title>Allow Everything</title>
-                </all>
                 <admin>
                     <children>
                         <news>
-
-                                <children>
-                                    <save translate="title">
-                                        <title>Save Page</title>
-                                        <sort_order>0</sort_order>
-                                    </save>
-                                    <delete translate="title">
-                                        <title>Delete Page</title>
-                                        <sort_order>10</sort_order>
-                                    </delete>
-                                </children>
-
+                            <children>
+                                <save translate="title">
+                                    <title>Save Page</title>
+                                    <sort_order>0</sort_order>
+                                </save>
+                                <delete translate="title">
+                                    <title>Delete Page</title>
+                                    <sort_order>10</sort_order>
+                                </delete>
+                            </children>
                             <title>News Module</title>
                             <sort_order>200</sort_order>
                         </news>
