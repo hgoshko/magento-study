@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ism_Deliveryat>
+            <version>0.1.0</version>
+        </Ism_Deliveryat>
+    </modules>
+    <frontend>
+
+        <layout>
+            <updates>
+                <news>
+                    <file>deliveryat.xml</file>
+                </news>
+            </updates>
+        </layout>
+
+    </frontend>
+
+    <global>
+        <events>
+            <checkout_controller_onepage_save_shipping_method>
+                <observers>
+                    <shipping_deliveryat>
+                        <type>singleton</type>
+                        <class>deliveryat/observer</class>
+                        <method>addDeliveryat</method>
+                    </shipping_deliveryat>
+                </observers>
+            </checkout_controller_onepage_save_shipping_method>
+        </events>
+    </global>
+    <!--adminhtml>
+        <menu>
+            <news module="news">
+                <title>News</title>
+                <sort_order>77</sort_order>
+                <children>
+                    <article module="news">
+                        <title>Manage News</title>
+                        <sort_order>0</sort_order>
+                        <action>news/adminhtml_article</action>
+                    </article>
+                </children>
+            </news>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <news>
+                            <children>
+                                <save translate="title">
+                                    <title>Save Page</title>
+                                    <sort_order>0</sort_order>
+                                </save>
+                                <delete translate="title">
+                                    <title>Delete Page</title>
+                                    <sort_order>10</sort_order>
+                                </delete>
+                            </children>
+                            <title>News Module</title>
+                            <sort_order>200</sort_order>
+                        </news>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <news>
+                    <file>news.xml</file>
+                </news>
+            </updates>
+        </layout>
+
+    </adminhtml-->
+
+</config>
