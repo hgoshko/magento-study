@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+
+    <checkout_onepage_index>
+        <reference name="checkout.onepage.shipping_method">
+            <action method="setTemplate">
+                <template>ism_deliveryat/checkout/onepage/shipping_method.phtml</template>
+            </action>
+        </reference>
+    </checkout_onepage_index>
+
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>jquery-1.9.0.js</script></action>
+            <action method="addJs"><script>jquery-ui.js</script></action>
+            <action method="addCss"><stylesheet>css/ui.datepicker.css</stylesheet></action>
+            <action method="addJs"><script>ui.datepicker.js</script></action>
+        </reference>
+    </default>
+
+
+</layout>

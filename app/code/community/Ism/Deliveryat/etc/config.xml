@@ -5,16 +5,15 @@
             <version>0.1.0</version>
         </Ism_Deliveryat>
     </modules>
-    <frontend>
 
+    <frontend>
         <layout>
             <updates>
-                <news>
+                <deliveryat>
                     <file>deliveryat.xml</file>
-                </news>
+                </deliveryat>
             </updates>
         </layout>
-
     </frontend>
 
     <global>
@@ -28,8 +27,20 @@
                     </shipping_deliveryat>
                 </observers>
             </checkout_controller_onepage_save_shipping_method>
+
         </events>
+
+
+        <models>
+            <deliveryat>
+                <class>Ism_Deliveryat_Model</class>
+            </deliveryat>
+        </models>
+
     </global>
+
+
+
     <!--adminhtml>
         <menu>
             <news module="news">

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ism_Deliveryat>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Ism_Deliveryat>
+    </modules>
+</config>

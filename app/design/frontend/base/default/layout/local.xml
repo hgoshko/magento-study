@@ -31,13 +31,4 @@
 		<remove name="right.poll" />
 	</cms_index_index>
 
-    <checkout_onepage_index>
-        <reference name="checkout.onepage.shipping_method">
-            <action method="setTemplate">
-                <template>ism_deliveryat/checkout/onepage/shipping_method.phtml</template>
-            </action>
-        </reference>
-
-    </checkout_onepage_index>
-
 </layout>
