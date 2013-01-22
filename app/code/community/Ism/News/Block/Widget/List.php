@@ -8,7 +8,7 @@ class Ism_News_Block_Widget_List extends Mage_Core_Block_Template implements Mag
 
 		$list = Mage::getModel('news/article')->getCollection()
 			->addFieldToFilter('published', 1)
-			->setOrder('created_date', 'DESC');
+			->setOrder('publish_date', 'DESC');
 
 		$this->assign('list', $list);
 		return parent::_toHtml();

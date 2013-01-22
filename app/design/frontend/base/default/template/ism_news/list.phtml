@@ -4,7 +4,7 @@
 
 	<a href="<?=$this->getUrl('news/index/view', array('id'=> $article->getId()));?>">
         <?=$article->getTitle(); ?>
-    </a>
+    </a><?=$article->getFormattedPublishDate();?>
 	<p><?=$article->getAnnounce();?></p>
 	<hr/>
 <?php endforeach; ?>

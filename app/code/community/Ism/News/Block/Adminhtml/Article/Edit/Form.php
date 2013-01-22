@@ -50,7 +50,7 @@ class Ism_News_Block_Adminhtml_Article_Edit_Form extends Mage_Adminhtml_Block_Wi
 
     protected function _prepareForm()
     {
-        $model = Mage::registry('ism_news_article');
+        $article = Mage::registry('ism_news_article');
         $form = new Varien_Data_Form(
             array('id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post')
         );
@@ -59,7 +59,7 @@ class Ism_News_Block_Adminhtml_Article_Edit_Form extends Mage_Adminhtml_Block_Wi
             'legend'=>Mage::helper('cms')->__('General Information'),
             'class' => 'fieldset-wide'));
 
-        if ($model->getArticleId()) {
+        if ($article->getArticleId()) {
             $fieldset->addField('article_id', 'hidden', array(
                 'name' => 'article_id',
             ));
@@ -76,21 +76,22 @@ class Ism_News_Block_Adminhtml_Article_Edit_Form extends Mage_Adminhtml_Block_Wi
           'name'      => 'content',
           'label'     => Mage::helper('cms')->__('Content'),
           'title'     => Mage::helper('cms')->__('Content'),
-          'config'    => Mage::getSingleton('cms/wysiwyg_config')->getConfig()
+          'config'    => Mage::getSingleton('cms/wysiwyg_config')->getConfig(),
+		  'required'  => true,
       ));
 
         $dateFormatIso = Mage::app()->getLocale()->getDateFormat(
             Mage_Core_Model_Locale::FORMAT_TYPE_SHORT
         );
 
-        $fieldset->addField('created_date', 'date', array(
-            'name'      => 'created_date',
-            'label'     => Mage::helper('cms')->__('Created_date'),
+        $fieldset->addField('publish_date', 'date', array(
+            'name'      => 'publish_date',
+            'label'     => Mage::helper('cms')->__('Publish date'),
             'image'     => $this->getSkinUrl('images/grid-cal.gif'),
             'format'    => $dateFormatIso,
         ));
 
-        $fieldset->addField('announce', 'text', array(
+        $fieldset->addField('announce', 'textarea', array(
             'name'      => 'announce',
             'label'     => Mage::helper('cms')->__('Announce'),
             'title'     => Mage::helper('cms')->__('Announce'),
@@ -107,7 +108,7 @@ class Ism_News_Block_Adminhtml_Article_Edit_Form extends Mage_Adminhtml_Block_Wi
             ),
         ));
 
-        $form->setValues($model->getData());
+        $form->setValues($article->getData());
         $form->setUseContainer(true);
         $this->setForm($form);
 

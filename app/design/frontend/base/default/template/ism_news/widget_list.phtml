@@ -9,7 +9,7 @@
 		<?php foreach ($list as $article) : ?>
 		<a href="<?=$this->getUrl('news/index/view', array('id'=> $article->getId()));?>">
 			<?=$article->getTitle(); ?>
-		</a><hr/>
+		</a><?=$article->getFormattedPublishDate();?> <hr/>
 		<?php endforeach; ?>
 
 	</div>

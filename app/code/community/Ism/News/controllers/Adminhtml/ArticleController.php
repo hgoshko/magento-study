@@ -30,13 +30,13 @@ class Ism_News_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_act
 	public function editAction()
 	{
 		$id = $this->getRequest()->getParam('id');
-		$model = Mage::getModel('news/article')->load($id);
-        Mage::register('ism_news_article', $model);
+		$article = Mage::getModel('news/article')->load($id);
+        Mage::register('ism_news_article', $article);
 
-		if ($model->getId() || $id == 0) {
+		if ($article->getId() || $id == 0) {
             $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
             if (!empty($data)) {
-                $model->setData($data);
+                $article->setData($data);
             }
 			$this->loadLayout();
 			$this->_setActiveMenu('news/articles');
@@ -63,18 +63,18 @@ class Ism_News_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_act
         // check if data sent
         if ($data = $this->getRequest()->getPost()) {
             $id = $this->getRequest()->getParam('article_id');
-            $model = Mage::getModel('news/article')->load($id);
-            if (!$model->getId() && $id) {
+            $article = Mage::getModel('news/article')->load($id);
+            if (!$article->getId() && $id) {
                 Mage::getSingleton('adminhtml/session')->addError(Mage::helper('cms')->__('This article no longer exists.'));
                 $this->_redirect('*/*/');
                 return;
             }
             // init model and set data
-            $model->setData($data);
+            $article->setData($data);
             // try to save it
             try {
                 // save the data
-                $model->save();
+                $article->save();
                 // display success message
                 Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('cms')->__('The article has been saved.'));
                 // clear previously saved data from session
@@ -82,7 +82,7 @@ class Ism_News_Adminhtml_ArticleController extends Mage_Adminhtml_Controller_act
 
                 // check if 'Save and Continue'
                 if ($this->getRequest()->getParam('back')) {
-                    $this->_redirect('*/*/edit', array('article_id' => $model->getId()));
+                    $this->_redirect('*/*/edit', array('article_id' => $article->getId()));
                     return;
                 }
                 // go to grid

@@ -4,6 +4,7 @@
     <news_index_index>
         <reference name="content">
             <block type="news/list" name="news.list" template="ism_news/list.phtml"/>
+            <block type="news/html_pager" name="news_list_toolbar_pager"/>
         </reference>
     </news_index_index>
 

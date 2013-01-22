@@ -38,17 +38,15 @@
     </admin>
     <adminhtml>
         <menu>
-            <news module="news">
-                <title>News</title>
-                <sort_order>77</sort_order>
+            <cms translate="title" module="cms">
                 <children>
                     <article module="news">
-                        <title>Manage News</title>
+                        <title>News</title>
                         <sort_order>0</sort_order>
                         <action>news/adminhtml_article</action>
                     </article>
                 </children>
-            </news>
+            </cms>
         </menu>
         <acl>
             <resources>

@@ -16,4 +16,8 @@ class Ism_News_Model_Article extends Mage_Core_Model_Abstract {
 		$this->_eventPrefix = 'news_article';
 	}
 
+	public function getFormattedPublishDate(){
+    	return	date("m-d-Y", strtotime($this->getPublishDate()));
+	}
+
 }
